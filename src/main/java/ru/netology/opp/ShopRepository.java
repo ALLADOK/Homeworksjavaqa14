@@ -20,12 +20,7 @@ public class ShopRepository {
         return products;
     }
 
-    public void removeById(int id) throws Exception {
-        if (id < 0) {
-            throw new Exception(
-                    "Element with id: " + id + " not found"
-            );
-        }
+    public void remove(int id) {
 
         Product[] tmp = new Product[products.length - 1];
         int copyToIndex = 0;
@@ -39,15 +34,13 @@ public class ShopRepository {
     }
 
     public Product findById(int id) {
-        Product[] tmp = new Product[products.length - 1];
         for (Product product : products) {
-            if (product.getId() != id) {
+            if (product.getId() == id) {
                 return product;
             }
         }
         return null;
     }
-
 
     public Product[] getProducts() {
         return products;

@@ -14,30 +14,6 @@ public class Product {
         this.price = price;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public int getPrice() {
-        return price;
-    }
-
-    public int getClass(Object o) {
-        return id;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -51,5 +27,25 @@ public class Product {
         return Objects.hash(id, title, price);
     }
 
+
+    public int getId() {
+        return id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
 }
