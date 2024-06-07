@@ -18,7 +18,7 @@ public class ShopRepositoryTest {
         ShopRepository repo = new ShopRepository();
 
         Assertions.assertThrows(Exception.class, () -> {
-            repo.removeById(-100);
+            repo.removeById(1);
         });
     }
 
@@ -27,7 +27,7 @@ public class ShopRepositoryTest {
         ShopRepository repo = new ShopRepository();
 
         Assertions.assertThrows(RuntimeException.class, () -> {
-            repo.findById(3);
+            repo.findById(4);
 
         });
     }
