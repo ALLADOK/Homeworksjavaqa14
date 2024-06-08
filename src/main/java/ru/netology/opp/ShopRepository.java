@@ -20,8 +20,8 @@ public class ShopRepository {
         return products;
     }
 
-    public void remove(int id) {
 
+    public void remove(int id) {
         Product[] tmp = new Product[products.length - 1];
         int copyToIndex = 0;
         for (Product product : products) {
@@ -31,6 +31,26 @@ public class ShopRepository {
             }
         }
         products = tmp;
+
+
+    }
+
+    public void removeBiId(int id) throws Exception {
+        Product removingProduct = findById(id);
+        if (removingProduct == null) {
+            throw new Exception();
+        }
+        Product[] tmp = new Product[products.length - 1];
+        int copyToIndex = 0;
+        for (Product product : products) {
+            if (product.getId() != id) {
+                tmp[copyToIndex] = product;
+                copyToIndex++;
+            }
+        }
+        products = tmp;
+
+
     }
 
     public Product findById(int id) {
