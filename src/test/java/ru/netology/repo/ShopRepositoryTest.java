@@ -1,9 +1,9 @@
 package ru.netology.repo;
 
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import ru.netology.opp.Product;
+import ru.netology.opp.NotFoundException;
 import ru.netology.opp.ShopRepository;
 
 public class ShopRepositoryTest {
@@ -39,7 +39,7 @@ public class ShopRepositoryTest {
         repo.add(product3);
 
 
-        Assertions.assertThrows(Exception.class, () -> {
+        Assertions.assertThrows(NotFoundException.class, () -> {
             repo.remove(200);
 
         });

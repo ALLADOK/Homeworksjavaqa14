@@ -22,23 +22,9 @@ public class ShopRepository {
 
 
     public void remove(int id) {
-        Product[] tmp = new Product[products.length - 1];
-        int copyToIndex = 0;
-        for (Product product : products) {
-            if (product.getId() != id) {
-                tmp[copyToIndex] = product;
-                copyToIndex++;
-            }
-        }
-        products = tmp;
-
-
-    }
-
-    public void removeBiId(int id) throws Exception {
         Product removingProduct = findById(id);
         if (removingProduct == null) {
-            throw new Exception();
+            throw new NotFoundException(id);
         }
         Product[] tmp = new Product[products.length - 1];
         int copyToIndex = 0;
